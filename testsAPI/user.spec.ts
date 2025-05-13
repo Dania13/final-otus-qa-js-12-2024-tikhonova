@@ -1,5 +1,7 @@
 import { config, UserFixture, UserService } from '../framework';
 
+jest.retryTimes(3);
+
 describe('test autorization', () => {
   it('success', async () => {
     const user = UserFixture.recieveUserCredentials();

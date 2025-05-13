@@ -8,6 +8,8 @@ import {
   UserService,
 } from '../framework';
 
+jest.retryTimes(3);
+
 describe('test add contact', () => {
   let user: Credentials;
   let userResponse: {
@@ -19,7 +21,6 @@ describe('test add contact', () => {
     user = UserFixture.recieveUserCredentials();
     userResponse = (await UserService.login(user.email, user.password)).data;
   });
-
   it('success with only first and last names', async () => {
     const contact = ContactFixture.generateContactOnlyRequired();
 

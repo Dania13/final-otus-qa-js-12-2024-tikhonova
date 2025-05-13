@@ -55,6 +55,7 @@ const config = {
   // fakeTimers: {
   //   "enableGlobally": false
   // },
+  // testTimeout: 15000,
 
   // Force coverage collection from ignored files using an array of glob patterns
   // forceCoverageMatch: [],
@@ -114,7 +115,7 @@ const config = {
       {
         publicPath: './reports/html-report',
         filename: 'index.html',
-        openReport: true, //!process.env.CI
+        openReport: !process.env.CI,
       },
     ],
     ['github-actions', { silent: false }],
