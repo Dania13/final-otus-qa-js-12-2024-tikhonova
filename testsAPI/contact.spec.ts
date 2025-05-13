@@ -8,7 +8,7 @@ import {
   UserService,
 } from '../framework';
 
-jest.retryTimes(3);
+// jest.retryTimes(3);
 
 describe('test add contact', () => {
   let user: Credentials;
