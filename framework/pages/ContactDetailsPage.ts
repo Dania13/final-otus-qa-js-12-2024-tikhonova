@@ -7,24 +7,11 @@ export function ContactDetails({ page }: { page: Page }) {
   };
 
   const deleteContact = async () => {
-    // await page.waitForTimeout(10000);
-    // await page.getByRole('button', { name: 'Delete Contact' }).waitFor();
-    // await page.waitForTimeout(1000);
-    await page.getByRole('button', { name: 'Delete Contact' }).focus();
-    // await page.waitForTimeout(1000);
-    await page.locator('//html[1]').press('Enter');
-    // await page.press('/html[1]', 'Enter');
-    await page.getByRole('button', { name: 'Delete Contact' }).click();
-    // await page.locator('#delete').click();
-    // for (let i = 0; i < 10; i++) {
-    // await page.getByRole('button', { name: 'Delete Contact' }).click();
-    // }
-
-    // await page.waitForTimeout(1000);
     page.on('dialog', async (dialog) => {
       console.log(dialog.message());
       await dialog.accept();
     });
+    await page.getByRole('button', { name: 'Delete Contact' }).click();
   };
 
   const backToList = async () => {

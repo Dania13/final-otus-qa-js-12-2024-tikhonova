@@ -105,7 +105,7 @@ test('Check that contact have all fields', async ({ page }) => {
   );
 });
 
-test.skip('Delete contact success', async ({ page }) => {
+test('Delete contact success', async ({ page }) => {
   const contactListPage = ContactListPage({ page });
   await contactListPage.addNewContact();
 
